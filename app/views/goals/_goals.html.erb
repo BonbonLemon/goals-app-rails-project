@@ -1,0 +1,12 @@
+<ul>
+  <% user_goals(@user).each do |goal| %>
+    <li>
+      <%= link_to goal.body, goal_path(goal) %>
+      &nbsp; Status: <%= goal_status(goal) %>
+      <% if @user == current_user %>
+        <%= button_to "Edit", edit_goal_path(goal), method: :get %>
+        <%= button_to "Delete", goal_path(goal), method: :delete %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

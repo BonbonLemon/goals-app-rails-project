@@ -1,0 +1,7 @@
+<h2><%= @user.username %>'s Goals</h2>
+
+<!-- show goals -->
+<%= render partial: "goals/goals" %>
+
+
+<%= link_to "Set a New Goal", new_goal_path if @user == current_user %>

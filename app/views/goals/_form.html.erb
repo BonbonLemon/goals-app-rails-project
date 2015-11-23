@@ -1,0 +1,45 @@
+<% action = @goal.persisted? ? goal_path(@goal) : goals_path %>
+<% method = @goal.persisted? ? "patch" : "post" %>
+<% submit_button_title = @goal.persisted? ? "Change Goal" : "Set Goal" %>
+<% public_checked = ["","true", nil].include?(@goal.public) %>
+
+<form action="<%= action %>" method="post">
+  <%= auth_token %>
+
+  <input type="hidden" name="_method" value="<%= method %>">
+
+  <label>
+    Goal:
+    <input type="text"
+    name="goal[body]"
+    value="<%= @goal.body %>"
+    id="body">
+  </label>
+
+  <br><br>
+
+  <label>
+    Privacy
+
+    <br>
+
+    <input type="radio"
+      name="goal[public]"
+      value="true"
+      id="public"
+      <%= public_checked ? "checked" : "" %>> Public
+
+    <br>
+
+    <input type="radio"
+      name="goal[public]"
+      id="private"
+      value="false"
+      <%= public_checked ? "" : "checked" %>> Private
+  </label>
+
+  <br><br>
+
+  <input type="submit" value="<%= submit_button_title %>">
+
+</form>
