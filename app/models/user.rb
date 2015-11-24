@@ -7,6 +7,11 @@ class User < ActiveRecord::Base
 
     has_many :goals
 
+    has_many :comments_about,
+      class_name: "UserComment",
+      foreign_key: :user_id,
+      primary_key: :id
+
   attr_reader :password
 
   def self.generate_session_token

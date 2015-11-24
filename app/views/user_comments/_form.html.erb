@@ -1,0 +1,9 @@
+<form action="<%= user_comments_path %>" method="post">
+  <%= auth_token %>
+  <input type="text"
+    name="user_comment[body]"
+    value="<%= @new_user_comment.body %>"
+    id="comment_body">
+  <input type="hidden" name="user_comment[user_id]" value="<%= @user.id %>">
+  <input type="submit" value="Post Comment">
+</form>

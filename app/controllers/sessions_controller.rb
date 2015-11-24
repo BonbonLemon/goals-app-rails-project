@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       redirect_to user_path(@user)
     else
       flash.now[:errors] = ["Improper Credentials"]
-      @user = User.new(user_params)
+      # @user = User.find_by(username: user_params[:username])
       render :new
     end
   end

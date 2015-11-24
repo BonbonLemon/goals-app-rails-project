@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      login(@user)
       render :show
     else
       flash.now[:errors] = @user.errors.full_messages
@@ -16,6 +17,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @new_user_comment = UserComment.new
   end
 
   private

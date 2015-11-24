@@ -1,6 +1,7 @@
 class GoalsController < ApplicationController
   def show
     @goal = current_goal
+    @new_goal_comment = GoalComment.new
   end
 
   def new

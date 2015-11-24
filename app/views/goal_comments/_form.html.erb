@@ -1,0 +1,9 @@
+<form action="<%= goal_comments_path %>" method="post">
+  <%= auth_token %>
+  <input type="text"
+    name="goal_comment[body]"
+    value="<%= @new_goal_comment.body %>"
+    id="comment_body">
+  <input type="hidden" name="goal_comment[goal_id]" value="<%= @goal.id %>">
+  <input type="submit" value="Post Comment">
+</form>

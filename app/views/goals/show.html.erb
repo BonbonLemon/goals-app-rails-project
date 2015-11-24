@@ -3,3 +3,9 @@
 <label>
   Status: <%= goal_status(@goal) %>
 </label>
+
+<h3>Comments</h3>
+<%= render partial: "goal_comments/comments" %>
+
+<h3>Leave a comment</h3>
+<%= render partial: "goal_comments/form" %>

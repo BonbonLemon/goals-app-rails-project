@@ -4,7 +4,7 @@
   <%= auth_token %>
 
   <label> Username:
-    <input type="text" name="user[username]" id="username" value="<%= @user.username %>">
+    <input type="text" name="user[username]" id="username" value="<%= @user.username if @user %>">
   </label>
 
   <label> Password:

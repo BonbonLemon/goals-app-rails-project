@@ -1,0 +1,9 @@
+<% @user.comments_about.each do |comment| %>
+  <p>
+    <b><%= link_to comment.author_name, user_path(comment.author) %></b> posted: <%= comment.body %>
+    <% if comment.author == current_user %>
+        <%= button_to "Delete", user_comment_path(comment), method: :delete %>
+        <br>
+    <% end %>
+  </p>
+<% end %>

@@ -5,3 +5,9 @@
 
 
 <%= link_to "Set a New Goal", new_goal_path if @user == current_user %>
+
+<h3>Comments</h3>
+<%= render partial: "user_comments/comments" %>
+
+<h3>Leave a comment</h3>
+<%= render partial: "user_comments/form" %>
