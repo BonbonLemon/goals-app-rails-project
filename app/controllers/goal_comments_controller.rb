@@ -1,8 +1,8 @@
 class GoalCommentsController < ApplicationController
   def create
     @goal_comment = GoalComment.new(goal_comment_params)
-    @goal_comment.save!
-    flash.now[:errors] = @goal_comment.errors.full_messages
+    @goal_comment.save
+    flash[:errors] = @goal_comment.errors.full_messages
     redirect_to goal_path(@goal_comment.goal_id)
   end
 
